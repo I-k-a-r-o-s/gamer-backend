@@ -40,7 +40,7 @@ const userSchema = new Schema(
     },
     favorites: {
       type: [favoriteSchema],
-      default: null,
+      default: [],
     },
   },
   {
