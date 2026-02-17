@@ -6,6 +6,12 @@ const favoriteSchema = new Schema(
       type: Number,
       required: true,
     },
+    name: {
+      type: String,
+    },
+    background_image: {
+      type: String,
+    },
     addedAt: {
       type: Date,
       default: Date.now,
@@ -32,7 +38,10 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    favorites: [favoriteSchema],
+    favorites: {
+      type: [favoriteSchema],
+      default: null,
+    },
   },
   {
     timestamps: true,
