@@ -2,10 +2,12 @@ import dotenv from "dotenv";
 dotenv.config();
 import express from "express";
 import { connectMongoDB } from "./config/mongodb.js";
+import cookieParser from "cookie-parser";
 
 const server = express();
 
 server.use(express.json());
+server.use(cookieParser())
 
 const PORT = process.env.PORT || 5000;
 const startServer = async () => {
